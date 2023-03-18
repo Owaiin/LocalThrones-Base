@@ -6,11 +6,11 @@ export default function DealContainer() {
     <>
       <div className="mx-auto p-2 bg-neutral rounded-xl grid gap-5">
         <DealCard onClick={() => router.push("/deal/dealPage")} />
-        <DealCard />
-        <DealCard />
-        <DealCard />
-        <DealCard />
-        <DealCard />
+        <DealCard onClick={() => router.push("/deal/dealPage")} />
+        <DealCard onClick={() => router.push("/deal/dealPage")} />
+        <DealCard onClick={() => router.push("/deal/dealPage")} />
+        <DealCard onClick={() => router.push("/deal/dealPage")} />
+        <DealCard onClick={() => router.push("/deal/dealPage")} />
       </div>
     </>
   );

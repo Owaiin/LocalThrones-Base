@@ -6,6 +6,7 @@ import FeatureImageCard from "@/components/utility/imageCards/FeatureImageCard";
 import PizzaImage from "../../public/pizzaStock.jpg";
 import Button from "@/components/utility/Button";
 import { GoLocation } from "react-icons/go";
+import { BiArrowBack } from "react-icons/bi";
 import {
   AiOutlineHeart,
   AiOutlineInfoCircle,
@@ -14,10 +15,15 @@ import {
 import { FiShare } from "react-icons/fi";
 import FilterBadge from "@/components/nav/FilterBadge";
 import { useState } from "react";
+import BusinessInfo from "@/components/dealComponents/BusinessInfo";
 import PopupContainer from "@/components/dealComponents/PopupContainer";
+import LocationInfo from "@/components/dealComponents/LocationInfo";
+import { useRouter } from "next/navigation";
 export default function DealPage() {
   const [isLiked, setIsLiked] = useState(false);
-  const [showDrawer, setShowDrawer] = useState(false);
+  const [showBusiness, setShowBusiness] = useState(false);
+  const [showLocation, setShowLocation] = useState(false);
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -28,19 +34,25 @@ export default function DealPage() {
       </header>
       <main className="pt-20">
         <Container>
-          <div className="mb-5 grid grid-flow-col gap-3 overflow-scroll scrollbar-hide">
-            <FilterBadge text="Pizza" />
-            <FilterBadge text="American" />
-            <FilterBadge text="Alcohol" />
-            <FilterBadge text="Cocktails" />
-            <FilterBadge text="Vegan" />
+          <div className="flex items-center mb-5">
+            <div className="pr-3 mr-3 border-r text-3xl">
+              <BiArrowBack onClick={() => router.push("/")} />
+            </div>
+            <div className=" grid grid-flow-col gap-3 overflow-scroll scrollbar-hide">
+              <FilterBadge text="Pizza" />
+              <FilterBadge text="American" />
+              <FilterBadge text="Alcohol" />
+              <FilterBadge text="Cocktails" />
+              <FilterBadge text="Vegan" />
+            </div>
           </div>
+
           <div className="">
             <FeatureImageCard businessName="Pizza Mikes" image={PizzaImage} />
             <div className="flex text-2xl justify-between px-2 mb-2">
               <div className=" grid grid-cols-3 gap-4">
-                <AiOutlineInfoCircle onClick={() => setShowDrawer(true)} />
-                <GoLocation onClick={() => setShowDrawer(true)} />
+                <AiOutlineInfoCircle onClick={() => setShowBusiness(true)} />
+                <GoLocation onClick={() => setShowLocation(true)} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <FiShare />
@@ -66,8 +78,19 @@ export default function DealPage() {
             </div>
           </div>
         </Container>
+        {showBusiness && (
+          <PopupContainer onClick={() => setShowBusiness(false)}>
+            <BusinessInfo />
+          </PopupContainer>
+        )}
 
-        {showDrawer && <PopupContainer onClick={() => setShowDrawer(false)} />}
+        {showLocation && (
+          <PopupContainer onClick={() => setShowLocation(false)}>
+            <LocationInfo />
+          </PopupContainer>
+        )}
+
+        {/* {showBusiness && <BusinessInfo onClose={() => console.log("click")} />} */}
       </main>
     </>
   );
