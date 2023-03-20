@@ -20,6 +20,7 @@ import PopupContainer from "@/components/dealComponents/PopupContainer";
 import LocationInfo from "@/components/dealComponents/LocationInfo";
 import { useRouter } from "next/navigation";
 import QRCode from "@/components/dealComponents/QRCode";
+import Link from "next/link";
 export default function DealPage() {
   const [isLiked, setIsLiked] = useState(false);
   const [showBusiness, setShowBusiness] = useState(false);
@@ -31,14 +32,15 @@ export default function DealPage() {
       <Head>
         <title>Deal Page</title>
       </Head>
-      <header>
-        <Navbar />
-      </header>
+      <header></header>
       <main className="pt-20">
         <Container>
           <div className="flex items-center mb-5">
             <div className="pr-3 mr-3 border-r text-3xl">
-              <BiArrowBack onClick={() => router.push("/")} />
+              <Link href="/">
+                {" "}
+                <BiArrowBack />
+              </Link>
             </div>
             <div className=" grid grid-flow-col gap-3 overflow-scroll scrollbar-hide">
               <FilterBadge text="Pizza" />

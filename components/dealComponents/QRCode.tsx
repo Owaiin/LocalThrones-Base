@@ -27,17 +27,19 @@ export default function QRCode() {
       <div className="flex flex-col items-center pt-20 prose">
         <h2 className="mb-5">This QR code expires in:</h2>
         <h3>{countDown}</h3>
-        <SVG
-          text="https://wedlake.dev"
-          options={{
-            margin: 2,
-            width: 200,
-            color: {
-              dark: "#262626",
-              light: "#FFD750",
-            },
-          }}
-        />
+        <div className="bg-primary rounded-3xl p-3 overflow-hidden">
+          <SVG
+            text="https://wedlake.dev"
+            options={{
+              margin: 2,
+              width: 200,
+              color: {
+                dark: "#262626",
+                light: "#FFD750",
+              },
+            }}
+          />
+        </div>
       </div>
     </>
   );
