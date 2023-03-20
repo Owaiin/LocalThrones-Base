@@ -5,6 +5,7 @@ import Navbar from "@/components/nav/Navbar";
 import DealContainer from "@/components/dealComponents/DealContainer";
 import Container from "@/components/utility/Container";
 import FilterNav from "@/components/nav/FilterNav";
+import { signIn } from "next-auth/react";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <header className="pt-16">
         <Container>
+          <Navbar />
           <FilterNav />
         </Container>
       </header>

@@ -18,7 +18,7 @@ import { useState } from "react";
 import BusinessInfo from "@/components/dealComponents/BusinessInfo";
 import PopupContainer from "@/components/dealComponents/PopupContainer";
 import LocationInfo from "@/components/dealComponents/LocationInfo";
-import { useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
 import QRCode from "@/components/dealComponents/QRCode";
 import Link from "next/link";
 export default function DealPage() {
@@ -26,13 +26,15 @@ export default function DealPage() {
   const [showBusiness, setShowBusiness] = useState(false);
   const [showLocation, setShowLocation] = useState(false);
   const [showDeal, setShowDeal] = useState(false);
-  const router = useRouter();
+  const session = useSession();
   return (
     <>
       <Head>
         <title>Deal Page</title>
       </Head>
-      <header></header>
+      <header>
+        <Navbar />
+      </header>
       <main className="pt-20">
         <Container>
           <div className="flex items-center mb-5">
@@ -78,7 +80,11 @@ export default function DealPage() {
                 Itaque repudiandae recusandae maxime nobis quia ad doloremque ab
                 fugit error?
               </p>
-              <Button onClick={() => setShowDeal(true)} text="GET DEAL 🔥" />
+              {session.data === null ? (
+                <Button onClick={() => signIn()} text="Sign In to Get Deal" />
+              ) : (
+                <Button onClick={() => setShowDeal(true)} text="GET DEAL 🔥" />
+              )}
             </div>
           </div>
         </Container>

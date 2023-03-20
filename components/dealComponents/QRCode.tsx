@@ -1,7 +1,7 @@
 import { useQRCode } from "next-qrcode";
 import { useEffect, useState } from "react";
 export default function QRCode() {
-  const [countDown, setCountDown] = useState(10);
+  const [countDown, setCountDown] = useState(30);
   const { SVG } = useQRCode();
 
   //   QR Code Timer - Need to attach refresh to QR code using time value once deal data is passed as object
@@ -14,7 +14,7 @@ export default function QRCode() {
       }
     }
     if (countDown === 0) {
-      setCountDown(10);
+      setCountDown(30);
     }
   };
 
