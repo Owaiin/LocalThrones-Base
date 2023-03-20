@@ -8,6 +8,7 @@ export default function Button(props: {
   return (
     <>
       <button
+        onClick={props.onClick}
         className={`btn font-bold ${
           props.secondary ? "btn-secondary" : "btn-primary"
         }`}

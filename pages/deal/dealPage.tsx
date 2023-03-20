@@ -19,10 +19,12 @@ import BusinessInfo from "@/components/dealComponents/BusinessInfo";
 import PopupContainer from "@/components/dealComponents/PopupContainer";
 import LocationInfo from "@/components/dealComponents/LocationInfo";
 import { useRouter } from "next/navigation";
+import QRCode from "@/components/dealComponents/QRCode";
 export default function DealPage() {
   const [isLiked, setIsLiked] = useState(false);
   const [showBusiness, setShowBusiness] = useState(false);
   const [showLocation, setShowLocation] = useState(false);
+  const [showDeal, setShowDeal] = useState(false);
   const router = useRouter();
   return (
     <>
@@ -74,7 +76,7 @@ export default function DealPage() {
                 Itaque repudiandae recusandae maxime nobis quia ad doloremque ab
                 fugit error?
               </p>
-              <Button text="GET DEAL" />
+              <Button onClick={() => setShowDeal(true)} text="GET DEAL 🔥" />
             </div>
           </div>
         </Container>
@@ -87,6 +89,12 @@ export default function DealPage() {
         {showLocation && (
           <PopupContainer onClick={() => setShowLocation(false)}>
             <LocationInfo />
+          </PopupContainer>
+        )}
+
+        {showDeal && (
+          <PopupContainer onClick={() => setShowDeal(false)}>
+            <QRCode />
           </PopupContainer>
         )}
 
