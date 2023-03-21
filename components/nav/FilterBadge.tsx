@@ -9,7 +9,7 @@ export default function FilterBadge(props: {
     <>
       <div
         onClick={props.onClick}
-        className={`badge p-4  badge-outline ${
+        className={`badge p-5  badge-outline ${
           props.isSelected && "bg-primary text-white"
         }`}
       >

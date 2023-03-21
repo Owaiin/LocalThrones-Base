@@ -9,12 +9,12 @@ export default function FilterNav() {
           <BsFilter className="text-3xl" />
         </div>
         <div className="grid grid-flow-col gap-3 pl-5 overflow-scroll scrollbar-hide ">
-          <FilterBadge text="Option" />
-          <FilterBadge text="Option" />
-          <FilterBadge text="Option" />
-          <FilterBadge text="Option" />
-          <FilterBadge text="Option" />
-          <FilterBadge text="Option" />
+          <FilterBadge text="Chicken" />
+          <FilterBadge text="Alcohol" />
+          <FilterBadge text="Pizza" />
+          <FilterBadge text="Chinese" />
+          <FilterBadge text="Indian" />
+          <FilterBadge text="American" />
         </div>
       </div>
     </>
