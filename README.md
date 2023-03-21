@@ -9,6 +9,7 @@ Customers use a QR code from the deal page, which when scanned from a Business l
 
 ## TechStack
 NextJS, TailwindCSS, DaisyUI, NextAuth/AuthJS, Prisma, PlanetScale
+
 NextAuth, Prisma, and PlanetScale are all hooked-up and working
 
 ## Images - (As I've not finished setting up the business side, the deals are all the same at the moment)
