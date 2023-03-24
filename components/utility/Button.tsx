@@ -1,10 +1,10 @@
-import { SubresourceIntegrityPlugin } from "next/dist/build/webpack/plugins/subresource-integrity-plugin";
-
-export default function Button(props: {
+type ButtonProps = {
   secondary?: boolean;
   text?: string;
   onClick?: React.MouseEventHandler;
-}) {
+};
+
+export default function Button(props: ButtonProps) {
   return (
     <>
       <button

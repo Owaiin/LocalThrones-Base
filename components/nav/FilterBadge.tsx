@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function FilterBadge(props: {
+type BadgeProps = {
   isSelected?: boolean;
   text: string;
   onClick?: React.MouseEventHandler;
-}) {
+};
+
+export default function FilterBadge(props: BadgeProps) {
   return (
     <>
       <div
