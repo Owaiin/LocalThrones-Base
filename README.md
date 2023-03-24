@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LocalThrones - Base
+LocalThrones is a Manchester based service for promoting local venues, focusing on home-grown local industry. You can find more about it [here](https://www.instagram.com/localthronesmcr/?hl=en-gb)
 
-## Getting Started
+The project consists of two frontends, one for everyday users and another for businesses.
 
-First, run the development server:
+Customers will be able to login using OAuth providers (just Google at the moment) and will be able to access deals and offers that are made within the Business frontend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Customers use a QR code from the deal page, which when scanned from a Business login, will check that the QR code is valid and then add that to a count of usage for the business to track how many times a deal has been used. Each deal will have a series of pre-defined attributes to help further define the type of interests the users of the deal have. For example: Cocktails, Pizza, American. This will then help Businesses to create further deals or help them with social media ad campaign target audiences.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## TechStack
+NextJS, TailwindCSS, DaisyUI, NextAuth/AuthJS, Prisma, PlanetScale
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+NextAuth, Prisma, and PlanetScale are all hooked-up and working
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Images - (As I've not finished setting up the business side, the deals are all the same at the moment)
+### Home Screen/Select Deal
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img width="200" alt="HomeScreen" src="https://user-images.githubusercontent.com/20094176/226694722-aa7a8d45-4df0-4639-8d51-c46fae159829.png">
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Deal Screen - Info, Maps, and Like button are all working - MapsAPI not yet implemented but pops up a component where maps component will be
 
-## Learn More
+<img width="200" alt="DealScreen" src="https://user-images.githubusercontent.com/20094176/226695084-d4dc6ccf-f23a-4377-8932-f8d91488d993.png">
 
-To learn more about Next.js, take a look at the following resources:
+### QRScreen - Where a generated QRCode Component lives - QRCode updates every 30 seconds with a new Date in the value object
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img width="200" alt="QRCodeScreen" src="https://user-images.githubusercontent.com/20094176/226695307-aea058c6-575b-4202-8ca4-c4ff84942590.png">
